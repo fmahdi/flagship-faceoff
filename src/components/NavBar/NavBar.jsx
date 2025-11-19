@@ -1,4 +1,5 @@
 import { NavLink } from "react-router";
+import { FaShoppingCart,  FaBookmark } from "react-icons/fa";
 
 const NavBar = () => {
     return (
@@ -13,8 +14,9 @@ const NavBar = () => {
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         <NavLink to="/" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>Home</a></NavLink>
                         <NavLink to="/about" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>About</a></NavLink>
-                        <NavLink to="/ajka" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>Cart</a></NavLink>
-                        <NavLink to="/favorites" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>Favorites</a></NavLink>
+                        <NavLink to="/ajka" className={({ isActive }) => isActive ? "text-indigo-700" : ""}>
+                        <a><FaShoppingCart size={20}/></a></NavLink>
+                        <NavLink to="/favorites" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a><FaBookmark size={18} /></a></NavLink>
                     </ul>
                 </div>
                 <NavLink to="/">
@@ -26,8 +28,8 @@ const NavBar = () => {
                 <ul className="menu gap-4 menu-horizontal px-1">
                     <NavLink to="/" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>Home</a></NavLink>
                     <NavLink to="/about" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>About</a></NavLink>
-                    <NavLink to="/ajka" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>Cart</a></NavLink>
-                    <NavLink to="/favorites" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>Favorites</a></NavLink>
+                    <NavLink to="/ajka" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a><FaShoppingCart size={20} /></a></NavLink>
+                    <NavLink to="/favorites" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a><FaBookmark size={18} /></a></NavLink>
                 </ul>
             </div>
         </div>
