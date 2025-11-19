@@ -3,12 +3,13 @@ import MainLayout from "../mainLayout/MainLayout";
 import HomePage from "../pages/HomePage/HomePage";
 import About from "../pages/About/About";
 import Favorites from "../pages/Favorites/Favorites";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path:"/",
         Component:MainLayout,
-        errorElement:<h1>Gibon tai Bhul</h1>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 index:true,
