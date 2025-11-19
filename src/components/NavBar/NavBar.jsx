@@ -11,23 +11,23 @@ const NavBar = () => {
                     <ul
                         tabIndex="-1"
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a>Item 1</a></li>
-                    
-                        <li><a>Item 3</a></li>
+                        <NavLink to="/" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>Home</a></NavLink>
+                        <NavLink to="/about" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>About</a></NavLink>
+                        <NavLink to="/ajka" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>Cart</a></NavLink>
+                        <NavLink to="/favorites" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>Favorites</a></NavLink>
                     </ul>
                 </div>
                 <NavLink to="/">
-                <a className="cursor-pointer text-xl font-bold">FlagShipFaceOff</a>
+                    <a className="cursor-pointer text-xl font-bold">FlagShipFaceOff</a>
                 </NavLink>
             </div>
-           
+
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu gap-4 menu-horizontal px-1">
                     <NavLink to="/" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>Home</a></NavLink>
                     <NavLink to="/about" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>About</a></NavLink>
                     <NavLink to="/ajka" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>Cart</a></NavLink>
                     <NavLink to="/favorites" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>Favorites</a></NavLink>
-
                 </ul>
             </div>
         </div>
