@@ -1,10 +1,11 @@
-import React from 'react';
 import Banner from '../../components/Banner/Banner';
+import PhonesContainer from '../../components/PhonesContainer/PhonesContainer';
 
 const HomePage = () => {
     return (
         <div>
             <Banner></Banner>
+            <PhonesContainer></PhonesContainer>
         </div>
     );
 };
