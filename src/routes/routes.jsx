@@ -4,6 +4,7 @@ import HomePage from "../pages/HomePage/HomePage";
 import About from "../pages/About/About";
 import Favorites from "../pages/Favorites/Favorites";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import PhoneDetails from "../components/PhoneDetails/PhoneDetails";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
                {
                 path:"/favorites",
                 Component:Favorites
+            },
+            {
+                path:"/phoneDetails",
+                Component:PhoneDetails
             },
             {
                 path:"/about",
