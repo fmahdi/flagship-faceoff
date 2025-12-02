@@ -12,24 +12,22 @@ const NavBar = () => {
                     <ul
                         tabIndex="-1"
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <NavLink to="/" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>Home</a></NavLink>
-                        <NavLink to="/about" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>About</a></NavLink>
+                        <NavLink to="/" className={({ isActive }) => isActive ? "text-indigo-700" : ""}>Home</NavLink>
+                        <NavLink to="/about" className={({ isActive }) => isActive ? "text-indigo-700" : ""}>About</NavLink>
                         <NavLink to="/ajka" className={({ isActive }) => isActive ? "text-indigo-700" : ""}>
-                        <a><FaShoppingCart size={20}/></a></NavLink>
-                        <NavLink to="/favorites" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a><FaBookmark size={18} /></a></NavLink>
+                        <FaShoppingCart size={20}/></NavLink>
+                        <NavLink to="/favorites" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><FaBookmark size={18} /></NavLink>
                     </ul>
                 </div>
-                <NavLink to="/">
-                    <a className="cursor-pointer text-xl font-bold">FlagShipFaceOff</a>
-                </NavLink>
+                <NavLink to="/" className="cursor-pointer text-xl font-bold">FlagShipFaceOff</NavLink>
             </div>
 
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu gap-4 menu-horizontal px-1">
-                    <NavLink to="/" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>Home</a></NavLink>
-                    <NavLink to="/about" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a>About</a></NavLink>
-                    <NavLink to="/ajka" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a><FaShoppingCart size={20} /></a></NavLink>
-                    <NavLink to="/favorites" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><a><FaBookmark size={18} /></a></NavLink>
+                    <NavLink to="/" className={({ isActive }) => isActive ? "text-indigo-700" : ""}>Home</NavLink>
+                    <NavLink to="/about" className={({ isActive }) => isActive ? "text-indigo-700" : ""}>About</NavLink>
+                    <NavLink to="/ajka" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><FaShoppingCart size={20} /></NavLink>
+                    <NavLink to="/favorites" className={({ isActive }) => isActive ? "text-indigo-700" : ""}><FaBookmark size={18} /></NavLink>
                 </ul>
             </div>
         </div>
