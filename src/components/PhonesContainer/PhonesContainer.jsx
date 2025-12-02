@@ -1,19 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PhoneCard from "../PhoneCard/PhoneCard";
 
 const PhonesContainer = ({ phones }) => {
-    // const {displayPhones, setDisplayPhones} = useState([]);
+    const { displayPhones, setDisplayPhones } = useState([]);
+    const { showAll, setShowAll } = useState(false);
+    useEffect(() => {
+        if (showAll) {
+            setDisplayPhones(phones);
+        }else{
+            setDisplayPhones(phones.slice(0,6));
+        }
+    }, [setDisplayPhones, showAll])
 
     return (
         <div className="space-y-7">
             <h1>Phones-Container: {phones.length}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                 {
-                    phones.map((elem) => <PhoneCard key={elem.id} phone={elem}></PhoneCard>)
+                    displayPhones.map((elem) => <PhoneCard key={elem.id} phone={elem}></PhoneCard>)
                 }
             </div>
             <div className="mb-6 text-center">
-                <a className="relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-gray-100 border border-gray-100 rounded-lg shadow-inner group">
+                <a onClick={() => { prev => !setShowAll(prev) }} className="relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-gray-100 border border-gray-100 rounded-lg shadow-inner group">
                     <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
                     <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
                     <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
