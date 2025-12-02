@@ -16,7 +16,6 @@ const Banner = () => {
                         <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
                         <span className="relative text-black group-hover:text-white">Search</span>
                     </a>
-                    
                 </form>
             </div>
         </div>

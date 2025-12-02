@@ -4,11 +4,10 @@ import { useLoaderData } from 'react-router';
 
 const HomePage = () => {
     const data = useLoaderData();
-    console.log(data);
     return (
         <div>
             <Banner></Banner>
-            <PhonesContainer></PhonesContainer>
+            <PhonesContainer phones={data}></PhonesContainer>
         </div>
     );
 };
