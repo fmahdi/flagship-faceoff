@@ -1,4 +1,5 @@
 const PhoneDetails = () => {
+    
     return (
         <div>
             <h1>Phone-Details Page</h1>
