@@ -8,28 +8,29 @@ import PhoneDetails from "../components/PhoneDetails/PhoneDetails";
 
 const router = createBrowserRouter([
     {
-        path:"/",
-        Component:MainLayout,
-        errorElement:<ErrorPage></ErrorPage>,
-        children:[
+        path: "/",
+        Component: MainLayout,
+        errorElement: <ErrorPage></ErrorPage>,
+        children: [
             {
-                index:true,
-                loader:() => fetch("phones.json"),
-                hydrateFallbackElement:<p>"Angel loading...</p>,
-                Component:HomePage,
+                index: true,
+                loader: () => fetch("../phones.json"),
+                hydrateFallbackElement: <p>"Angel loading...</p>,
+                Component: HomePage,
 
             },
-               {
-                path:"/favorites",
-                Component:Favorites
+            {
+                path: "/favorites",
+                Component: Favorites
             },
             {
-                path:"/phoneDetails",
-                Component:PhoneDetails
+                path: "/phoneDetails/:id",
+                loader: () => fetch("../phones.json"),
+                Component: PhoneDetails
             },
             {
-                path:"/about",
-                Component:About
+                path: "/about",
+                Component: About
             }
         ]
     }

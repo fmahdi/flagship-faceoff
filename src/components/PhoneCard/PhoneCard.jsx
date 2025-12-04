@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 
 const PhoneCard = ({phone}) => {
-    const {image, name, description,} = phone || {};
+    const {image, name, description, id} = phone || {};
     return (
         <div className="card bg-base-100 w-96 shadow-sm">
             <figure className="px-10 pt-10">
@@ -14,7 +14,7 @@ const PhoneCard = ({phone}) => {
                 <h2 className="card-title">{name}</h2>
                 <p>{description}</p>
                 <div className="card-actions">
-                    <Link to="/phoneDetails">
+                    <Link to={`/phoneDetails/${id}`}>
                     <button className="btn btn-primary">View Details</button>
                     </Link>
                 </div>
