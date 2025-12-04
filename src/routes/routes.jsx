@@ -15,6 +15,7 @@ const router = createBrowserRouter([
             {
                 index:true,
                 loader:() => fetch("phones.json"),
+                hydrateFallbackElement:<p>"Angel loading...</p>,
                 Component:HomePage,
 
             },

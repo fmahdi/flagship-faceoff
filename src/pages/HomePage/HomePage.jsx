@@ -7,10 +7,11 @@ const HomePage = () => {
     const data = useLoaderData();
     const [phones, setPhones] = useState(data);
     const handleSearch = (e, text) =>{
-        // e.preventDefault();
+        e.preventDefault();
+        if (text==="") return setPhones(data);
         const searchedPhone = data.filter((phone) => 
-            {phone.brand.toLowerCase().split().includes(text) ||
-            phone.model.toLowerCase().split().includes(text)
+            {return phone?.name?.toLowerCase().split(" ").includes(text.toLowerCase()) ||
+            phone?.model?.toLowerCase().split(" ").includes(text.toLowerCase())
             })
         setPhones(searchedPhone);
     };
