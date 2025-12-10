@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-const PhoneCard = ({ phone, deletable }) => {
+const PhoneCard = ({ phone, deletable, handleDelete }) => {
     const { image, name, description, id } = phone || {};
     return (
         <div className="card bg-base-100 w-96 shadow-sm">
@@ -26,7 +26,7 @@ const PhoneCard = ({ phone, deletable }) => {
                     </Link>
 
                 </div>
-                {deletable && <button className="btn btn-outline btn-error absolute -top-0 -right-0">X</button>
+                {deletable && <button onClick={() => handleDelete(id)} className="btn btn-outline btn-error absolute -top-0 -right-0">X</button>
                 }
             </div>
         </div >
