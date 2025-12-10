@@ -1,19 +1,25 @@
 import { useLoaderData, useParams } from "react-router";
 import { MdBookmarkAdd, MdOutlineAddShoppingCart } from "react-icons/md";
 import Buttons from "../UI/Buttons";
+import { addFav } from "../../utils";
+
 
 const PhoneDetails = () => {
     const data = useLoaderData();
     const { id } = useParams();
     const currentPhone = data.find(elem => elem.id === parseInt(id));
     const { image, name, description, brand, price, storage, camera_info } = currentPhone;
+    const handleFavorites = () => {
+        addFav(currentPhone);
+    }
+
     return (
         <div className="p-10">
             <img className="w-full md:w-auto mx-auto mb-8" src={image} alt="current Phone" />
             <div className="flex justify-between mb-5">
                 <h1 className="text-5xl font-thin">{name}</h1>
                 <div className="flex justify-between gap-4">
-                    <Buttons label={<MdBookmarkAdd />}></Buttons>
+                    <Buttons onClick={handleFavorites} label={<MdBookmarkAdd />}></Buttons>
                     <Buttons label={<MdOutlineAddShoppingCart />}></Buttons>
                 </div>
             </div>
@@ -56,11 +62,9 @@ const PhoneDetails = () => {
                             </dd>
                         </div>
                         <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt className="text-sm/6 font-medium text-gray-900">About</dt>
+                            <dt className="text-sm/6 font-medium text-gray-900">Camera Info</dt>
                             <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
-                                Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur
-                                qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud
-                                pariatur mollit ad adipisicing reprehenderit deserunt qui eu.
+                                {camera_info}
                             </dd>
                         </div>
                     </dl>
