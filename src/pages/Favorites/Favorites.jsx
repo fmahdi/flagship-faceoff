@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Favorites = () => {
+    const [displayPhones, setDisplayPhones] = useState([]);
+
     return (
         <div>
-            <p>This is Favorites</p>
+            {
+                displayPhones.map((elem) => <PhoneCard key={elem.id} phone={elem} deletable={true}></PhoneCard>)
+            }
         </div>
     );
 };
